@@ -1,0 +1,9 @@
+.git
+.github
+.claude
+.distignore
+.gitignore
+.gitattributes
+README.md
+assets/style.scss
+assets/style.css.map

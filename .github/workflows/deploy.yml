@@ -1,0 +1,38 @@
+name: Deploy to WordPress.org
+
+on:
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
+
+jobs:
+  tag:
+    name: New tag
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: WordPress.org plugin readme/version check
+        run: |
+          VERSION_TAG="${GITHUB_REF#refs/tags/}"
+          HEADER_VERSION=$(grep -m1 '^ \* Version:' arcanum-admin-query-filters.php | awk '{print $NF}')
+          README_VERSION=$(grep -m1 '^Stable tag:' readme.txt | awk '{print $NF}')
+
+          if [ "$VERSION_TAG" != "$HEADER_VERSION" ] || [ "$VERSION_TAG" != "$README_VERSION" ]; then
+            echo "Version mismatch: tag=$VERSION_TAG, plugin header=$HEADER_VERSION, readme stable tag=$README_VERSION"
+            exit 1
+          fi
+
+      - name: Deploy to WordPress.org
+        uses: 10up/action-wordpress-plugin-deploy@stable
+        env:
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+          SLUG: arcanum-admin-query-filters
+          ASSETS_DIR: .wordpress-org
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true

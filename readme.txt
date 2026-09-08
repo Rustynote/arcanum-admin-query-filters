@@ -57,6 +57,14 @@ No. It adds a separate, structured filter box alongside the existing search box 
 
 No. The filter box and its REST endpoints only load on the admin post/page list screens for users with the `manage_options` capability — there's no frontend footprint.
 
+== Screenshots ==
+
+1. The Advanced Filters box on the Posts list screen — filter by custom field, taxonomy, date, author, or status without writing a single line of PHP.
+2. Filtering by a custom field (postmeta) — works with ACF, Meta Box, Pods, Custom Field Suite, or any plugin that stores postmeta.
+3. Combining multiple conditions with AND/OR logic.
+4. Filtering by taxonomy terms — categories, tags, and any custom taxonomy.
+5. Filtering by relative date ranges, like "before the last 30 days." or "in the last 7 days"
+
 == Future Features ==
 
 Ideas being considered for future releases:

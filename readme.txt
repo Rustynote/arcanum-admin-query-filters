@@ -1,14 +1,14 @@
 === Arcanum Admin Query Filters ===
 Contributors: rustynote
-Tags: filter, custom fields, search, admin, taxonomy
+Tags: filter, custom fields, taxonomy, meta query, acf
 Requires at least: 5.2
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPL v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
-Filter the post and page list by custom fields, taxonomies, dates, author, and status — combine conditions with AND/OR logic, no code required.
+Filter the post and page list by custom fields, taxonomies, dates, author, and status — a visual meta query builder with AND/OR logic, no code required.
 
 == Description ==
 
@@ -33,6 +33,8 @@ If you manage a site with hundreds or thousands of posts — products, listings,
 
 The filter UI and its REST endpoints are restricted to users with the `manage_options` capability. Developers can extend the field list via the `ba_search_dropdown_options` filter, and supply matching values and query logic via `ba_search_get_values` and `ba_search_build_condition`.
 
+Source code and issue tracker: [GitHub](https://github.com/Rustynote/arcanum-admin-query-filters)
+
 == Installation ==
 
 1. Upload the plugin files to the `/wp-content/plugins/arcanum-admin-query-filters` directory, or install the plugin through the WordPress plugins screen directly.
@@ -41,9 +43,17 @@ The filter UI and its REST endpoints are restricted to users with the `manage_op
 
 == Frequently Asked Questions ==
 
-= Does this work with ACF, Pods, Meta Box, or other custom field plugins? =
+= Does this work with Advanced Custom Fields (ACF)? =
 
-Yes. Arcanum Admin Query Filters filters by the underlying postmeta key and value, so it works no matter which plugin created the field.
+Yes. Arcanum Admin Query Filters filters by the underlying postmeta key and value, so any field created with ACF works out of the box — no configuration needed.
+
+= Does this work with Pods, Meta Box, or other custom field plugins? =
+
+Yes. The same applies to Pods, Meta Box, Custom Field Suite, or any plugin that stores its data as postmeta.
+
+= Can I filter using a meta query, like WP_Query's meta_query? =
+
+Yes. Each condition you build in the Advanced Filters box maps to a meta query clause under the hood — operators like Equals, Contains, Greater Than, and Between are combined with AND/OR the same way you'd nest a `meta_query` array in code.
 
 = Who can use the filter box? =
 
@@ -74,6 +84,9 @@ Ideas being considered for future releases:
 * Extend advanced filtering to the users and comments list screens
 
 == Changelog ==
+
+= 1.0.1 =
+* Refined readme tags for better plugin directory search relevance.
 
 = 1.0.0 =
 * Initial release.

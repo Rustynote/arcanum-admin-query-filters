@@ -9,7 +9,7 @@ namespace BetterAdminSearch;
  * Plugin Name:       Arcanum Admin Query Filters
  * Plugin URI:        https://github.com/Rustynote/arcanum-admin-query-filters
  * Description:       Adds an advanced filter box to the post and page list screens, letting you combine multiple conditions with AND/OR logic to narrow results fast — no query writing required. Filter by custom fields (with string, number, boolean, or date comparisons), taxonomies, publish/modification date (including relative ranges like "in the last 7 days"), post author, status, slug, and parent. Filtered views are reflected in the URL, so they can be bookmarked or shared, and developers can add their own fields via a handful of filters. Restricted to users with the manage_options capability.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Requires at least: 5.2
  * Requires PHP:      8.1
  * Author:            Jaroslav Suhanek

@@ -4,11 +4,11 @@ Tags: filter, custom fields, taxonomy, meta query, acf
 Requires at least: 5.2
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPL v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
-Filter the post and page list by custom fields, taxonomies, dates, author, and status — a visual meta query builder with AND/OR logic, no code required.
+Filter the post/page list by custom fields, taxonomies, dates, author, and status. A visual meta query builder, no code required.
 
 == Description ==
 
@@ -84,6 +84,9 @@ Ideas being considered for future releases:
 * Extend advanced filtering to the users and comments list screens
 
 == Changelog ==
+
+= 1.0.2 =
+* Shortened the short description to fit the plugin directory's 150-character limit.
 
 = 1.0.1 =
 * Refined readme tags for better plugin directory search relevance.
